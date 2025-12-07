@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimonial Biodata Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1ea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            border-top: 5px solid #8d5524;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: #ffdddd;
+        }
+
+        input:valid, select:valid, textarea:valid {
+            border-color: #ddffdd;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8d5524;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a3515;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Biodata Form</h2>
+        <form id="bioForm">
+            
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="fullname" placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" placeholder="e.g., 25" min="18" max="99" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female" required> Female</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="e.g., 01700000000" pattern="[0-9]{11}" title="Please enter an 11 digit phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Religion</label>
+                <select name="religion" required>
+                    <option value="">Select Religion</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Hinduism">Hinduism</option>
+                    <option value="Christianity">Christianity</option>
+                    <option value="Buddhism">Buddhism</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Occupation</label>
+                <input type="text" name="occupation" placeholder="e.g., Engineer" required>
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea name="address" rows="3" placeholder="Enter full address" required></textarea>
+            </div>
+
+            <button type="submit">Submit Biodata</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bioForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Submitted Successfully!");
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
